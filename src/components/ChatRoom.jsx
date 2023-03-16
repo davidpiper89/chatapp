@@ -8,6 +8,8 @@ const Chatroom = () => {
   const [messages, setMessages] = useState([]);
   const scroll = useRef();
 
+  const style = { main: `flex flex-col p-[10px] relative` };
+
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("timestamp"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -22,7 +24,7 @@ const Chatroom = () => {
 
   return (
     <>
-      <main>
+      <main className={style.main}>
         {messages && messages.map((msg) => <Message key={msg.id} msg={msg} />)}
       </main>
       <SendMessage scroll={scroll} />

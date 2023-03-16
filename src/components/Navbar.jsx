@@ -6,10 +6,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const Navbar = () => {
   const [user] = useAuthState(auth);
 
-  const style = { navContainer: `flex justify-center gap-20 mt-5` };
+  const style = {
+    navContainer: `flex justify-center mt-5`,
+    title: `py-2 px-4 font-bold`,
+  };
   return (
     <nav className={style.navContainer}>
-      <div>Piper's Chat</div>
+      <div className={style.title}>Piper's Chat</div>
       <div>{user ? <LogOut /> : ""}</div>
     </nav>
   );

@@ -6,6 +6,11 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 const SendMessage = ({ scroll }) => {
   const [message, setMessage] = useState("");
 
+  const style = {
+    sendButton: `bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded`,
+    sendMessage: `py-2 px-4 rounded border border-black`,
+  };
+
   const sendMessage = async (e) => {
     e.preventDefault();
     if (message === "") {
@@ -30,8 +35,9 @@ const SendMessage = ({ scroll }) => {
         onInput={(e) => setMessage(e.target.value)}
         type="text"
         placeholder="Message"
+        className={style.sendMessage}
       ></input>
-      <button>Send</button>
+      <button className={style.sendButton}>Send</button>
     </form>
   );
 };
