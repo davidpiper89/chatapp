@@ -3,13 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD8XlDRflh0SYR28C5i-Q23CZHpS6se2SQ",
-  authDomain: "piperschat-59795.firebaseapp.com",
-  projectId: "piperschat-59795",
-  storageBucket: "piperschat-59795.appspot.com",
-  messagingSenderId: "1051257351554",
-  appId: "1:1051257351554:web:2bc36649d29df673b5f39b",
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
 };
+
 
 const app = initializeApp(firebaseConfig);
 

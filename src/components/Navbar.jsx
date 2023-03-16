@@ -2,6 +2,7 @@ import React from "react";
 import LogOut from "./LogOut";
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Signin from "./Signin";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -13,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className={style.navContainer}>
       <div className={style.title}>Piper's Chat</div>
-      <div>{user ? <LogOut /> : ""}</div>
+      <div>{user ? <LogOut /> : <Signin />}</div>
     </nav>
   );
 };

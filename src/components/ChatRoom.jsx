@@ -8,7 +8,7 @@ const Chatroom = () => {
   const [messages, setMessages] = useState([]);
   const scroll = useRef();
 
-  const style = { main: `flex flex-col p-[10px] relative` };
+  const style = { main: `flex flex-col p-[10px] md:min-w-[728px] mx-auto` };
 
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("timestamp"));

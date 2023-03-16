@@ -7,8 +7,9 @@ const SendMessage = ({ scroll }) => {
   const [message, setMessage] = useState("");
 
   const style = {
+    form: `flex gap-2 mb-4 `,
     sendButton: `bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded`,
-    sendMessage: `py-2 px-4 rounded border border-black`,
+    sendMessage: `py-2 px-4 rounded border border-black w-8/12`,
   };
 
   const sendMessage = async (e) => {
@@ -29,7 +30,7 @@ const SendMessage = ({ scroll }) => {
     scroll.current.scrollIntoView({ behaviour: "smooth" });
   };
   return (
-    <form onSubmit={sendMessage}>
+    <form className={style.form}onSubmit={sendMessage}>
       <input
         value={message}
         onInput={(e) => setMessage(e.target.value)}
