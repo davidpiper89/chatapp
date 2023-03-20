@@ -7,23 +7,23 @@ const Message = ({ msg }) => {
     name: `absolute text-gray-600 text-xs -top-5 right-0 min-w-max`,
     text: `break-all`,
     sent: {
-      main: `bg-[#395dff] text-white flex-row-reverse float-right`,
+      main: `bg-[#218aff] text-white flex-row-reverse float-right rounded-md`,
       nameSent: `-top-5 right-0`,
     },
     received: {
-      main: `bg-[#e5e5ea] text-black float-left content-start`,
+      main: `bg-[#d8d8d8] text-black float-left content-start rounded-md`,
       nameRec: `-top-5 left-0`,
     },
   };
   const messageClass =
     msg.uid === auth.currentUser.uid
       ? `${style.sent.main}`
-      : `${style.received}`;
+      : `${style.received.main}`;
 
   const nameClass =
     msg.uid === auth.currentUser.uid
       ? `${style.sent.nameSent}`
-      : `${style.sent.nameRec}`;
+      : `${style.received.nameRec}`;
   return (
     <div>
       <div className={`${style.message} ${messageClass}`}>
